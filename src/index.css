@@ -1,0 +1,336 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Arabian Nights Design System - Sophisticated Dark Mode HVAC Intelligence */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Core Colors - Navy Blue Midnight Theme */
+    --background: 230 50% 5%;
+    --foreground: 45 30% 95%;
+
+    --card: 230 45% 8%;
+    --card-foreground: 45 30% 95%;
+
+    --popover: 230 45% 8%;
+    --popover-foreground: 45 30% 95%;
+
+    /* Primary - Navy Midnight Blue */
+    --primary: 220 70% 50%;
+    --primary-foreground: 45 30% 95%;
+
+    /* Secondary - Emerald Neon Green (efficiency indicators) */
+    --secondary: 160 84% 45%;
+    --secondary-foreground: 230 50% 5%;
+
+    /* Accent - Gold (Arabian Nights luxury) */
+    --accent: 43 96% 56%;
+    --accent-foreground: 230 50% 5%;
+
+    --muted: 230 30% 15%;
+    --muted-foreground: 230 20% 60%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 45 30% 95%;
+
+    --border: 230 30% 18%;
+    --input: 230 30% 15%;
+    --ring: 43 96% 56%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens - Arabian Nights */
+    --gold: 43 96% 56%;
+    --gold-light: 45 93% 68%;
+    --emerald: 160 84% 45%;
+    --emerald-light: 158 64% 55%;
+    --navy: 230 50% 5%;
+    --midnight: 230 45% 12%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(220 70% 50%) 0%, hsl(230 60% 40%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(43 96% 56%) 0%, hsl(35 92% 50%) 100%);
+    --gradient-success: linear-gradient(135deg, hsl(160 84% 45%) 0%, hsl(158 64% 55%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(230 50% 5%) 0%, hsl(230 45% 10%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(230 45% 12%) 0%, hsl(230 45% 8%) 100%);
+    --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%);
+    --gradient-emerald-border: linear-gradient(135deg, hsl(160 84% 45%) 0%, hsl(158 64% 55%) 100%);
+
+    /* Shadows */
+    --shadow-glow: 0 0 40px rgba(251, 191, 36, 0.2);
+    --shadow-emerald: 0 0 30px rgba(16, 185, 129, 0.3);
+    --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.5);
+    --shadow-button: 0 4px 14px rgba(251, 191, 36, 0.3);
+
+    /* Sidebar */
+    --sidebar-background: 230 45% 6%;
+    --sidebar-foreground: 45 30% 95%;
+    --sidebar-primary: 43 96% 56%;
+    --sidebar-primary-foreground: 230 50% 5%;
+    --sidebar-accent: 230 30% 15%;
+    --sidebar-accent-foreground: 45 30% 95%;
+    --sidebar-border: 230 30% 18%;
+    --sidebar-ring: 43 96% 56%;
+  }
+
+  .light {
+    --background: 45 30% 96%;
+    --foreground: 230 50% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 230 50% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 230 50% 10%;
+
+    --primary: 220 70% 45%;
+    --primary-foreground: 45 30% 95%;
+
+    --secondary: 160 84% 39%;
+    --secondary-foreground: 45 30% 95%;
+
+    --accent: 43 96% 50%;
+    --accent-foreground: 230 50% 10%;
+
+    --muted: 45 20% 90%;
+    --muted-foreground: 230 30% 40%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 45 30% 95%;
+
+    --border: 45 20% 85%;
+    --input: 45 20% 90%;
+    --ring: 43 96% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
+
+@layer components {
+  /* Glass Card Effect - Arabian Nights Style */
+  .glass-card {
+    @apply bg-card/60 backdrop-blur-xl border border-border/50 rounded-2xl;
+    background: var(--gradient-glass);
+  }
+
+  .glass-card-emerald {
+    @apply bg-card/60 backdrop-blur-xl rounded-2xl relative overflow-hidden;
+    background: var(--gradient-glass);
+  }
+
+  .glass-card-emerald::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: var(--gradient-emerald-border);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+
+  /* Gradient Backgrounds */
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-gold {
+    background: var(--gradient-gold);
+  }
+
+  .gradient-success {
+    background: var(--gradient-success);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  /* Glow Effects */
+  .glow-gold {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .glow-emerald {
+    box-shadow: var(--shadow-emerald);
+  }
+
+  /* Text Gradient */
+  .text-gradient-primary {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-gold);
+  }
+
+  .text-gradient-success {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-success);
+  }
+
+  /* Stat Card */
+  .stat-card {
+    @apply bg-muted/50 backdrop-blur-sm border border-border/30 rounded-2xl p-6;
+    transition: all 0.3s ease;
+  }
+
+  .stat-card:hover {
+    @apply border-accent/50;
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Feature Card */
+  .feature-card {
+    @apply bg-card border border-border/50 rounded-2xl p-8 transition-all duration-300;
+  }
+
+  .feature-card:hover {
+    @apply border-accent/60 -translate-y-1;
+    box-shadow: var(--shadow-card);
+  }
+
+  /* Pricing Card */
+  .pricing-card {
+    @apply bg-card border border-border/50 rounded-3xl p-8 transition-all duration-300;
+  }
+
+  .pricing-card-featured {
+    @apply bg-card border-2 border-accent rounded-3xl p-8 relative;
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Dashboard Mock Card */
+  .dashboard-card {
+    @apply bg-muted/30 backdrop-blur-sm border border-border/40 rounded-xl;
+  }
+
+  /* Section Container */
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Navbar Styles */
+  .nav-link {
+    @apply text-muted-foreground hover:text-accent transition-colors duration-200 font-medium;
+  }
+
+  .nav-link-active {
+    @apply text-accent;
+  }
+
+  /* Simulation Room Card */
+  .room-card {
+    @apply glass-card-emerald p-6 transition-all duration-500;
+  }
+
+  .room-card.eco-mode {
+    @apply border-secondary/50;
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.2);
+  }
+
+  .room-card.alert-mode {
+    @apply border-amber-500/50;
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.2);
+  }
+
+  /* Sensor Pulse Animation */
+  .sensor-pulse {
+    animation: sensorPulse 2s ease-in-out infinite;
+  }
+
+  @keyframes sensorPulse {
+    0%, 100% {
+      box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
+    }
+  }
+
+  /* ROI Counter */
+  .roi-counter {
+    @apply font-display text-5xl md:text-6xl font-bold text-accent;
+    text-shadow: 0 0 30px rgba(251, 191, 36, 0.4);
+  }
+}
+
+@layer utilities {
+  /* Animation Classes */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  .animate-pulse-emerald {
+    animation: pulseEmerald 2s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  @keyframes glow {
+    from { box-shadow: 0 0 20px rgba(251, 191, 36, 0.2); }
+    to { box-shadow: 0 0 40px rgba(251, 191, 36, 0.4); }
+  }
+
+  @keyframes pulseEmerald {
+    0%, 100% { 
+      opacity: 1;
+      box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    }
+    50% { 
+      opacity: 0.8;
+      box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+    }
+  }
+
+  /* Scroll indicator */
+  .scroll-indicator {
+    @apply w-6 h-10 border-2 border-accent/50 rounded-full flex justify-center;
+  }
+
+  .scroll-indicator::before {
+    content: '';
+    @apply w-1 h-2 bg-accent rounded-full mt-2;
+    animation: scroll-down 1.5s ease-in-out infinite;
+  }
+
+  @keyframes scroll-down {
+    0%, 100% { opacity: 0; transform: translateY(0); }
+    50% { opacity: 1; transform: translateY(10px); }
+  }
+}
