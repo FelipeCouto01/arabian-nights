@@ -28,7 +28,7 @@ const Footer = () => {
   const socials = [
     { icon: Linkedin, href: '#', label: 'LinkedIn' },
     { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Github, href: '#', label: 'GitHub' },
+    { icon: Github, href: 'https://github.com/FelipeCouto01/arabian-nights', label: 'GitHub' },
     { icon: Instagram, href: '#', label: 'Instagram' },
   ];
 
@@ -42,10 +42,10 @@ const Footer = () => {
               <ArabianLogo size="lg" />
             </div>
             <p className="text-muted-foreground mb-6 max-w-sm">
-              Automação inteligente de HVAC com IA. Reduza custos, aumente o conforto 
+              Automação inteligente de HVAC com IA. Reduza custos, aumente o conforto
               e contribua para um futuro mais sustentável.
             </p>
-            
+
             {/* Contact Info */}
             <div className="space-y-3 text-sm">
               <a href="mailto:contato@arabiannights.io" className="flex items-center gap-3 text-muted-foreground hover:text-accent transition-colors">
@@ -58,7 +58,7 @@ const Footer = () => {
               </a>
               <div className="flex items-center gap-3 text-muted-foreground">
                 <MapPin className="w-4 h-4" />
-                São Paulo, Brasil
+                Aquidabã, Sergipe, Brasil
               </div>
             </div>
           </div>
